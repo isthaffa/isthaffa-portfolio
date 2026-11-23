@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, useMotionValueEvent, useScroll, AnimatePresence } from "motion/react";
 import { Menu, X } from "lucide-react";
 import clsx from "clsx";
+import Image from "next/image";
 
 const links = [
   { href: "#about", label: "About" },
@@ -40,8 +41,14 @@ export default function Nav() {
           )}
         >
           <a href="#top" className="group flex items-center gap-2 font-display font-semibold text-white">
-            <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-emerald-400 to-violet-500 text-sm text-black transition-transform group-hover:rotate-12">
-              AI
+            <span className="relative h-9 w-9 overflow-hidden rounded-full bg-gradient-to-br from-emerald-400 to-violet-500 p-[2px] transition-transform group-hover:scale-110">
+              <Image
+                src="/profile-card.jpg"
+                alt="Ahmed Isthaffa"
+                width={64}
+                height={64}
+                className="h-full w-full rounded-full object-cover object-[50%_25%]"
+              />
             </span>
             <span className="hidden sm:inline">isthaffa</span>
           </a>

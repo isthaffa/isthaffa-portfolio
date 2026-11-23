@@ -7,7 +7,12 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const grotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-grotesk" });
 const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
 
+const siteUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
+  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  : "http://localhost:3000";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "Ahmed Isthaffa | AI Engineer",
   description:
     "AI Engineer and Senior Full Stack Engineer. LLM pipelines, OCR, RAG, reverse engineering, and AI-native development with Claude Code, Codex and Copilot.",
@@ -16,7 +21,9 @@ export const metadata: Metadata = {
     description:
       "AI Engineer and Senior Full Stack Engineer building LLM, OCR and RAG systems.",
     type: "website",
+    images: [{ url: "/profile-card.jpg", width: 1000, height: 1250, alt: "Ahmed Isthaffa" }],
   },
+  twitter: { card: "summary_large_image", images: ["/profile-card.jpg"] },
 };
 
 export const viewport: Viewport = {

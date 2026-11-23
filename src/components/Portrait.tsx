@@ -31,7 +31,7 @@ export default function Portrait() {
             alt={`Portrait of ${profile.name}`}
             fill
             sizes="(min-width: 768px) 33vw, 100vw"
-            className="object-contain object-bottom drop-shadow-[0_20px_40px_rgba(0,0,0,0.6)] transition-transform duration-700 group-hover:scale-[1.03]"
+            className="object-cover object-top drop-shadow-[0_20px_40px_rgba(0,0,0,0.6)] transition-transform duration-700 group-hover:scale-[1.03]"
             onError={() => setMissing(true)}
             priority
           />
